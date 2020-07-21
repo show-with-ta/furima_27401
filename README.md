@@ -34,15 +34,11 @@ Things you may want to cover:
 |password|string|null: false|
 |family_name|integer|null: false|
 |family_name_kana|integer|null: false|
-|given_name|integer|null: false|
-|given_name_kana|integer|null: false|
+|first_name|integer|null: false|
+|first_name_kana|integer|null: false|
 |birthday|integer|null: false|
-|address_id|integer||
-|credit_card_id|integer||
 
 ### Association
-- has_many :addresses
-- has_many :credit_cards
 - has_many :products
 
 ## addressesテーブル
@@ -51,6 +47,7 @@ Things you may want to cover:
 |------|----|-------|
 |id|integer|null: false, unique: true|
 |prefecture|string|null: false|
+|user_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
