@@ -40,6 +40,8 @@ Things you may want to cover:
 
 ### Association
 - has_many :products
+- belongs_to :address
+- has_many :credit_cards
 
 ## addressesテーブル
 
@@ -70,7 +72,6 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, unique: true|
-|image|string|null: false|
 |name|string|null: false|
 |detail|text|null: false|
 |shipping_fee|string|null: false|
@@ -81,18 +82,20 @@ Things you may want to cover:
 |user_id||null: false, foreign_key: true|
 |category_id|integer|null: false, foreign_key: true|
 |brand_id|integer|null: false, foreign_key: true|
+|image_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
 - belongs_to :category
 - belongs_to :brand
+- has_many :image
 
 ## categoriesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, unique: true|
-|name|integer|null: false|
+|name|string|null: false|
 
 ### Association
 - has_many :products
@@ -102,7 +105,17 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, unique: true|
-|name|integer|null: false|
+|name|string|null: false|
 
 ### Association
 - has_many :products
+
+## imagesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null: false, unique: true|
+|image|string|null: false|
+
+### Association
+- belongs_to :products
