@@ -40,7 +40,7 @@ Things you may want to cover:
 
 ### Association
 - has_many :products
-- belongs_to :address
+- has_one :address
 - has_many :credit_cards
 
 ## addressesテーブル
@@ -82,13 +82,12 @@ Things you may want to cover:
 |user_id||null: false, foreign_key: true|
 |category_id|integer|null: false, foreign_key: true|
 |brand_id|integer|null: false, foreign_key: true|
-|image_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
 - belongs_to :category
 - belongs_to :brand
-- has_many :image
+- has_many :images
 
 ## categoriesテーブル
 
@@ -116,6 +115,7 @@ Things you may want to cover:
 |------|----|-------|
 |id|integer|null: false, unique: true|
 |image|string|null: false|
+|product_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :products
+- belongs_to :product
