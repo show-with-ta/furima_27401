@@ -41,7 +41,6 @@ Things you may want to cover:
 ### Association
 - has_many :items
 - has_one :address
-- has_many :credit_cards
 
 ## addressesテーブル
 
@@ -49,19 +48,6 @@ Things you may want to cover:
 |------|----|-------|
 |id|integer|null: false, unique: true|
 |prefecture|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :user
-
-## credit_cardsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|id|integer|null: false, unique: true|
-|number|integer|null: false, unique: true|
-|expiration_date|integer|null: false|
-|security_code|integer|mull: false|
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association
