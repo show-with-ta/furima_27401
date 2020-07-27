@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :name, presence: true, uniqueness: true
+  validates :nickname, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
   validates :encrypted_password, presence: true, length: { minimum: 6 }, inclusion: { in: %w(/\A[a-zA-Z0-9]+\z/)}
   validates :family_name, presence: true, format: { with: /\A[ぁ-んァ-ン一-龥]/ }
