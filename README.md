@@ -29,7 +29,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, unique: true|
-|name|string|null: false|
+|nickname|string|null: false|
 |email|string|null:false, unique: true|
 |password|string|null: false|
 |family_name|integer|null: false|
@@ -39,7 +39,7 @@ Things you may want to cover:
 |birthday|integer|null: false|
 
 ### Association
-- has_many :products
+- has_many :items
 - has_one :address
 - has_many :credit_cards
 
@@ -67,7 +67,7 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 
-## productsテーブル
+## itemsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -97,7 +97,7 @@ Things you may want to cover:
 |name|string|null: false|
 
 ### Association
-- has_many :products
+- has_many :items
 
 ## brandsテーブル
 
@@ -107,7 +107,7 @@ Things you may want to cover:
 |name|string|null: false|
 
 ### Association
-- has_many :products
+- has_many :items
 
 ## imagesテーブル
 
@@ -115,7 +115,7 @@ Things you may want to cover:
 |------|----|-------|
 |id|integer|null: false, unique: true|
 |image|string|null: false|
-|product_id|integer|null: false, foreign_key: true|
+|item_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :product
+- belongs_to :item
