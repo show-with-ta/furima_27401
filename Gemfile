@@ -51,6 +51,7 @@ group :test do
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
   gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -61,3 +62,5 @@ end
 gem 'devise'
 gem "haml-rails", ">= 1.0", '<= 2.0.1'
 gem "pry-rails" 
+gem 'active_hash'
+gem 'mini_magick'
