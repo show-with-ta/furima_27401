@@ -28,7 +28,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, unique: true|
+|id|integer|prime_key: true|
 |nickname|string|null: false|
 |email|string|null:false, unique: true|
 |password|string|null: false|
@@ -40,50 +40,32 @@ Things you may want to cover:
 
 ### Association
 - has_many :items
-- has_one :address
-
-## addressesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|id|integer|null: false, unique: true|
-|prefecture|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :user
 
 ## itemsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, unique: true|
+|image|string|null: false|
 |name|string|null: false|
 |detail|text|null: false|
-|shipping_fee|string|null: false|
-|shipping_origin|string|null: false|
-|shipping_day|string|nul: false|
-|price|integer|null: false|
-|condition|string|null: false|
-|user_id||null: false, foreign_key: true|
 |category_id|integer|null: false, foreign_key: true|
+|condition_id|integer|null: false, foreign_key: true|
+|postage_payer_id|integer|null: false, foreign_key: true|
+|prefecture_id|integer|null: false, foreign_key: true|
+|shipping_day_id|string|nul: false, foreign_key: true|
+|price|integer|null: false|
+|user_id||null: false, foreign_key: true|
 |brand_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
-- belongs_to :category
+- belongs_to_active_hash :category
+- belongs_to_active_hash :condition
+- belongs_to_active_hash :postage_payer
+- belongs_to_active_hash :prefecture
+- belongs_to_active_hash :shipping_day
 - belongs_to :brand
-- has_many :images
-
-## categoriesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|id|integer|null: false, unique: true|
-|name|string|null: false|
-
-### Association
-- has_many :items
 
 ## brandsテーブル
 
@@ -95,13 +77,4 @@ Things you may want to cover:
 ### Association
 - has_many :items
 
-## imagesテーブル
 
-|Column|Type|Options|
-|------|----|-------|
-|id|integer|null: false, unique: true|
-|image|string|null: false|
-|item_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :item
