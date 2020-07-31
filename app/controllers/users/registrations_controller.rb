@@ -6,7 +6,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def create
-    User.create
     if @user.save
       redirect_to root_path alert: '登録が完了しました'
     else
