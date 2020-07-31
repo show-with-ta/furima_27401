@@ -11,7 +11,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       redirect_to root_path alert: '登録が完了しました'
     else
       render :new
-   end
+    end
   end
 
 
