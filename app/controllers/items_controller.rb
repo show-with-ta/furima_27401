@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update]
+  before_action :corrent_user, only: [:show]
+
 
   def index
     @items = Item.all.order(id: "DESC")
@@ -40,5 +42,10 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def corrent_user
+    @item = Item.find(params[:id])
+    redirect_to root_path if @item.orders.present?
   end
 end
