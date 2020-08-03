@@ -60,7 +60,6 @@ group :production do
   gem 'rails_12factor'
 end
 gem 'devise'
-gem "haml-rails", ">= 1.0", '<= 2.0.1'
 gem "pry-rails" 
 gem 'active_hash'
 gem 'mini_magick'
