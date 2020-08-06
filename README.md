@@ -66,6 +66,7 @@ Things you may want to cover:
 - belongs_to_active_hash :prefecture
 - belongs_to_active_hash :shipping_day
 - belongs_to :brand
+- has_one :purchase
 
 ## brandsテーブル
 
@@ -77,4 +78,17 @@ Things you may want to cover:
 ### Association
 - has_many :items
 
+## purchasesテーブル
+|Column|Type|Options|
+|------|----|-------|
 
+|post_code|string|null: false|
+|prefecture_id|integer|null: false, foreign_key: true|
+|city|string|null: false|
+|street_number|string|null: false|
+|building|string||
+|phone_number|integer|null: false, unique: true|
+|item_id|integer|null: false, foreign_key: true|
+### Association
+- has_one :item
+- belongs_to_active_hash :prefecture_code

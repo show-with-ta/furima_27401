@@ -35,9 +35,9 @@ describe Item do
       end
 
       it 'is invalid without a detail' do
-        @item.introduction = nil
+        @item.detail = nil
         @item.valid?
-        expect(@item.errors[:introduction]).to include("can't be blank")
+        expect(@item.errors[:detail]).to include("can't be blank")
       end
 
       it 'is invalid without a category_id' do
@@ -58,16 +58,16 @@ describe Item do
         expect(@item.errors[:postage_payer_id]).to include("can't be blank")
       end
 
-      it 'is invalid without a shipping_code_id' do
-        @item.prefecture_code_id = nil
+      it 'is invalid without a prefecture_id' do
+        @item.prefecture_id = nil
         @item.valid?
-        expect(@item.errors[:shipping_code_id]).to include("can't be blank")
+        expect(@item.errors[:prefecture_id]).to include("can't be blank")
       end
 
-      it 'is invalid without a preparation_day_id' do
-        @item.preparation_day_id = nil
+      it 'is invalid without a shipping_day_id' do
+        @item.shipping_day_id = nil
         @item.valid?
-        expect(@item.errors[:preparation_day_id]).to include("can't be blank")
+        expect(@item.errors[:shipping_day_id]).to include("can't be blank")
       end
 
       it 'is invalid without a price' do
