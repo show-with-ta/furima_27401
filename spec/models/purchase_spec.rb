@@ -39,7 +39,8 @@ RSpec.describe Purchase, type: :model do
       it 'is invalid prefecture_id is 1' do
         @purchase.prefecture_id = '1'
         @purchase.valid?
-        expect(@purchase.errors[:prefecture_id]).to include('must be other than 1')
+        expect(@purchase.errors[:prefecture_id]).to include('must be other than 1'
+      end
       
       it 'is invalid without a city' do
         @purchase.city = nil
